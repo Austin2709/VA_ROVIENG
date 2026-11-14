@@ -158,7 +158,7 @@ if (heroSlides.length > 1 && !prefersReducedMotion) {
     if (!document.hidden) {
       showSlide(activeSlideIndex + 1);
     }
-  }, 8000);
+  }, 5000);
 }
 
 if ("serviceWorker" in navigator && window.location.protocol !== "file:") {
