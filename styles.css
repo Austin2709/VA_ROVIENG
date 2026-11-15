@@ -38,6 +38,106 @@ body.menu-open {
   overflow: hidden;
 }
 
+.page-scrollbar {
+  position: fixed;
+  z-index: 8;
+  top: 50%;
+  left: clamp(0.75rem, 2.2vw, 2rem);
+  display: flex;
+  height: min(58vh, 30rem);
+  min-height: 14rem;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+
+.page-scrollbar-logo {
+  display: block;
+  width: 1.15rem;
+  height: 1.15rem;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 5px rgba(214, 173, 22, 0.35));
+}
+
+.page-scrollbar-track {
+  position: relative;
+  display: block;
+  width: 1.8rem;
+  min-height: 0;
+  flex: 1;
+  margin: 0.7rem 0;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.page-scrollbar-track:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.page-scrollbar-line {
+  position: absolute;
+  top: 0.4rem;
+  right: 50%;
+  bottom: 0.4rem;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold), var(--blue));
+  transform: translateX(-50%);
+}
+
+.page-scrollbar-tick {
+  position: absolute;
+  left: 50%;
+  width: 0.55rem;
+  height: 1px;
+  background: var(--blue);
+  opacity: 0.55;
+  transform: translateX(-50%);
+}
+
+.page-scrollbar-tick--quarter {
+  top: 25%;
+}
+
+.page-scrollbar-tick--half {
+  top: 50%;
+}
+
+.page-scrollbar-tick--three-quarter {
+  top: 75%;
+}
+
+.page-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0.55rem;
+  height: 0.55rem;
+  border: 1px solid var(--gold-deep);
+  background: var(--gold);
+  box-shadow: 0 0 0 0.2rem rgba(214, 173, 22, 0.16);
+  transform: translate(-50%, calc(var(--scroll-offset, 0px) - 50%)) rotate(45deg);
+  pointer-events: none;
+}
+
+.page-scrollbar-track.is-dragging .page-scrollbar-thumb {
+  transform: translate(-50%, calc(var(--scroll-offset, 0px) - 50%)) rotate(45deg) scale(1.2);
+}
+
+.motion-reveal {
+  opacity: 0;
+  transform: translate3d(0, 1rem, 0);
+  transition:
+    opacity 480ms ease-out,
+    transform 560ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.motion-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -756,15 +856,12 @@ h2 em {
   margin-bottom: 0;
 }
 
-.approach-copy {
-  max-width: 32rem;
-}
-
 .approach-note {
   display: flex;
   align-items: center;
   gap: 0.9rem;
   margin-top: 2rem;
+  margin-bottom: 0;
   padding-top: 1.2rem;
   border-top: 1px solid var(--line);
   color: var(--paper);
@@ -779,6 +876,152 @@ h2 em {
   border: 1px solid var(--blue);
   border-radius: 50%;
   color: var(--gold-text);
+}
+
+.field-update {
+  padding: clamp(4rem, 8vw, 7rem) 9vw;
+  border-top: 1px solid var(--line);
+}
+
+.field-update:nth-of-type(even) {
+  background: var(--ink-soft);
+}
+
+.field-update-inner {
+  display: grid;
+  max-width: 76rem;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 7vw, 7rem);
+  margin: 0 auto;
+}
+
+.field-update-copy h2 {
+  margin: 0.65rem 0 1rem;
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 4.2vw, 4.15rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.field-update-copy p {
+  max-width: 28rem;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.85;
+}
+
+.field-carousel {
+  min-width: 0;
+  border: 1px solid var(--blue);
+  background: var(--panel);
+}
+
+.field-carousel--portrait {
+  width: min(100%, 44rem);
+  margin-inline: auto;
+}
+
+.field-carousel-frame {
+  overflow-x: auto;
+  overflow-y: hidden;
+  aspect-ratio: 16 / 9;
+  cursor: grab;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  touch-action: pan-x pan-y;
+  background: var(--ink-soft);
+}
+
+.field-carousel--portrait .field-carousel-frame {
+  aspect-ratio: 3 / 4;
+}
+
+.field-carousel-frame::-webkit-scrollbar {
+  display: none;
+}
+
+.field-carousel-frame:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.field-carousel-frame.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+.field-carousel-frame.is-dragging .field-carousel-slide {
+  cursor: grabbing;
+}
+
+.field-carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.field-carousel-slide {
+  display: block;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  background: var(--ink-soft);
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.field-carousel-slide:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: -4px;
+}
+
+.field-carousel-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--blue);
+}
+
+.field-carousel-counter {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.field-carousel-hint {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.field-carousel-autoplay-toggle {
+  min-height: 2rem;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--blue);
+  background: transparent;
+  color: var(--gold-deep);
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.field-carousel-autoplay-toggle[hidden] {
+  display: none;
+}
+
+.field-carousel-autoplay-toggle:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
 }
 
 .presentation-page {
@@ -1238,6 +1481,10 @@ h2 em {
 }
 
 @media (max-width: 520px) {
+  .page-scrollbar {
+    display: none;
+  }
+
   .brand-logo {
     width: 2.65rem;
     height: 2.65rem;
@@ -1292,6 +1539,15 @@ h2 em {
 
   .section-wrap {
     width: 86%;
+  }
+
+  .field-update {
+    padding-inline: 8vw;
+  }
+
+  .field-update-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .overview h2,
@@ -1388,6 +1644,10 @@ h2 em {
     transition: none;
   }
 
+  .motion-reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (hover: hover) {
