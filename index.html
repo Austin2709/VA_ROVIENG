@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta name="google-site-verification" content="65jyI4f2duucp8YS9jM75epIB7LoCSM0R9VA5MKlQWw" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
@@ -22,11 +21,35 @@
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="vendor/bootstrap-5.3.9/bootstrap.min.css" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="vendor/bootstrap-5.3.9/bootstrap.bundle.min.js" defer></script>
     <script src="script.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="page-scrollbar">
+      <img class="page-scrollbar-logo" src="images/va-rovieng-logo-cropped.png" alt="" />
+      <div
+        class="page-scrollbar-track"
+        role="scrollbar"
+        tabindex="0"
+        aria-label="Page scroll position"
+        aria-controls="main"
+        aria-orientation="vertical"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+      >
+        <span class="page-scrollbar-line" aria-hidden="true">
+          <span class="page-scrollbar-tick page-scrollbar-tick--quarter"></span>
+          <span class="page-scrollbar-tick page-scrollbar-tick--half"></span>
+          <span class="page-scrollbar-tick page-scrollbar-tick--three-quarter"></span>
+          <span class="page-scrollbar-thumb"></span>
+        </span>
+      </div>
+    </div>
 
     <header class="site-header">
       <div class="brand">
@@ -168,6 +191,303 @@
           />
         </figure>
       </section>
+
+      <section class="field-update" id="drilling-activities" aria-labelledby="drilling-activities-title">
+        <div class="field-update-inner">
+          <div class="field-update-copy">
+            <span class="eyebrow">Company update / 01</span>
+            <h2 id="drilling-activities-title">Drilling Activities</h2>
+            <p>
+              These photos give a closer look at drilling work in an outdoor
+              field setting. One scene shows two workers beside a compact rig,
+              with hoses, tools, and other equipment around them; another shows
+              an operator working at a rig in an open, grassy area. Trees and
+              vegetation surround the sites. Together, the pictures show the
+              people, equipment, and field conditions visible during drilling.
+            </p>
+          </div>
+          <div
+            class="field-carousel field-carousel--portrait"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Drilling activity photos"
+          >
+            <div
+              class="field-carousel-frame"
+              tabindex="0"
+              aria-label="Swipe, drag, or use the arrow keys to view drilling activity photos"
+            >
+              <div class="field-carousel-track">
+                <img
+                  class="field-carousel-slide is-active"
+                  src="images/drilling-activities-01.png"
+                  alt="Two workers operating a drilling rig at a site among trees"
+                  fetchpriority="high"
+                  decoding="async"
+                  draggable="false"
+                />
+                <img
+                  class="field-carousel-slide"
+                  src="images/drilling-activities-02.png"
+                  alt="A worker operating a drilling rig in a green field"
+                  loading="lazy"
+                  decoding="async"
+                  draggable="false"
+                />
+              </div>
+            </div>
+            <div class="field-carousel-status">
+              <span class="field-carousel-counter" aria-live="polite" aria-atomic="true">1 / 2</span>
+              <span class="field-carousel-hint">Swipe or drag to browse</span>
+              <button
+                class="field-carousel-autoplay-toggle"
+                type="button"
+                aria-label="Pause automatic slide changes"
+                hidden
+              >
+                Pause
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="field-update"
+        id="raw-material-from-machinery-drilling"
+        aria-labelledby="raw-material-from-machinery-drilling-title"
+      >
+        <div class="field-update-inner">
+          <div class="field-update-copy">
+            <span class="eyebrow">Company update / 02</span>
+            <h2 id="raw-material-from-machinery-drilling-title">Raw Material from Machinery Drilling</h2>
+            <p>
+              These photos show drill-core samples and broken rock arranged
+              across a selection of sample trays. Some pieces are long,
+              cylindrical cores, while others are shorter fragments placed in
+              boxes and channels. The samples vary in size, color, and texture,
+              and some are arranged in rows or marked for reference. Viewed
+              together, the images show how drilling samples can be laid out
+              and examined more closely.
+            </p>
+          </div>
+          <div
+            class="field-carousel field-carousel--portrait"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Raw material and drill-core photos"
+          >
+            <div
+              class="field-carousel-frame"
+              tabindex="0"
+              aria-label="Swipe, drag, or use the arrow keys to view raw material photos"
+            >
+              <div class="field-carousel-track">
+                <img
+                  class="field-carousel-slide is-active"
+                  src="images/raw-material-from-machinery-drilling-01.png"
+                  alt="Drill core samples arranged in a red tray"
+                  fetchpriority="high"
+                  decoding="async"
+                  draggable="false"
+                />
+                <img
+                  class="field-carousel-slide"
+                  src="images/raw-material-from-machinery-drilling-02.png"
+                  alt="Drill cores and rock samples arranged in rows outdoors"
+                  loading="lazy"
+                  decoding="async"
+                  draggable="false"
+                />
+                <img
+                  class="field-carousel-slide"
+                  src="images/raw-material-from-machinery-drilling-03.png"
+                  alt="Rock fragments sorted in sample trays"
+                  loading="lazy"
+                  decoding="async"
+                  draggable="false"
+                />
+                <img
+                  class="field-carousel-slide"
+                  src="images/raw-material-from-machinery-drilling-04.png"
+                  alt="Drill samples and sediment in a field tray"
+                  loading="lazy"
+                  decoding="async"
+                  draggable="false"
+                />
+                <img
+                  class="field-carousel-slide"
+                  src="images/raw-material-from-machinery-drilling-05.png"
+                  alt="Rock and core samples arranged in several trays"
+                  loading="lazy"
+                  decoding="async"
+                  draggable="false"
+                />
+                <img
+                  class="field-carousel-slide"
+                  src="images/raw-material-from-machinery-drilling-06.png"
+                  alt="Labeled cylindrical drill-core samples in a wooden tray"
+                  loading="lazy"
+                  decoding="async"
+                  draggable="false"
+                />
+              </div>
+            </div>
+            <div class="field-carousel-status">
+              <span class="field-carousel-counter" aria-live="polite" aria-atomic="true">1 / 6</span>
+              <span class="field-carousel-hint">Swipe or drag to browse</span>
+              <button
+                class="field-carousel-autoplay-toggle"
+                type="button"
+                aria-label="Pause automatic slide changes"
+                hidden
+              >
+                Pause
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="field-update" id="raw-materials" aria-labelledby="raw-materials-title">
+        <div class="field-update-inner">
+          <div class="field-update-copy">
+            <span class="eyebrow">Company update / 03</span>
+            <h2 id="raw-materials-title">Raw Materials</h2>
+            <p>
+              These close-up photographs focus on individual rock samples,
+              making their surfaces and patterns easier to see. The pieces show
+              dark gray and greenish areas, pale white bands, small flecks, and
+              irregular edges. Each slide presents a different shape or
+              arrangement, from broad pale areas across darker rock to smaller
+              scattered markings. Together, the images offer a visual look at
+              the samples without identifying their mineral content.
+            </p>
+          </div>
+          <div
+            class="field-carousel field-carousel--portrait"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Raw material sample photos"
+          >
+            <div
+              class="field-carousel-frame"
+              tabindex="0"
+              aria-label="Swipe, drag, or use the arrow keys to view raw material sample photos"
+            >
+              <div class="field-carousel-track">
+                <img
+                  class="field-carousel-slide is-active"
+                  src="images/raw-materials-01.png"
+                  alt="Close-up of a dark gray rock sample with pale bands"
+                  decoding="async"
+                  draggable="false"
+                />
+                <img
+                  class="field-carousel-slide"
+                  src="images/raw-materials-02.png"
+                  alt="Cross-section of a gray rock sample with white bands"
+                  loading="lazy"
+                  decoding="async"
+                  draggable="false"
+                />
+                <img
+                  class="field-carousel-slide"
+                  src="images/raw-materials-03.png"
+                  alt="Close-up of a gray rock sample with pale veins"
+                  loading="lazy"
+                  decoding="async"
+                  draggable="false"
+                />
+                <img
+                  class="field-carousel-slide"
+                  src="images/raw-materials-04.png"
+                  alt="Dark rock sample with pale veins and metallic-looking flecks"
+                  loading="lazy"
+                  decoding="async"
+                  draggable="false"
+                />
+                <img
+                  class="field-carousel-slide"
+                  src="images/raw-materials-05.png"
+                  alt="Long gray rock sample with pale bands and flecks"
+                  loading="lazy"
+                  decoding="async"
+                  draggable="false"
+                />
+              </div>
+            </div>
+            <div class="field-carousel-status">
+              <span class="field-carousel-counter" aria-live="polite" aria-atomic="true">1 / 5</span>
+              <span class="field-carousel-hint">Swipe or drag to browse</span>
+              <button
+                class="field-carousel-autoplay-toggle"
+                type="button"
+                aria-label="Pause automatic slide changes"
+                hidden
+              >
+                Pause
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="field-update" id="machinery" aria-labelledby="machinery-title">
+        <div class="field-update-inner">
+          <div class="field-update-copy">
+            <span class="eyebrow">Company update / 04</span>
+            <h2 id="machinery-title">Machinery</h2>
+            <p>
+              The machinery carousel brings together several kinds of
+              equipment shown in the photos. It includes excavators and dump
+              trucks alongside drilling rigs, loading equipment, and industrial
+              screening or crushing machines. Some images show machinery
+              outdoors, while others show it beneath covered structures, in
+              workshops, or in processing areas. Browse the slides for a visual
+              overview, from mobile site equipment to larger machines.
+            </p>
+          </div>
+          <div
+            class="field-carousel"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Machinery photos"
+          >
+            <div
+              class="field-carousel-frame"
+              tabindex="0"
+              aria-label="Swipe, drag, or use the arrow keys to view machinery photos"
+            >
+              <div class="field-carousel-track">
+                <img class="field-carousel-slide is-active" src="images/machinery-01.png" alt="Yellow excavator at a work area" fetchpriority="high" decoding="async" draggable="false" />
+                <img class="field-carousel-slide" src="images/machinery-02.png" alt="Dump trucks beneath a covered structure" loading="lazy" decoding="async" draggable="false" />
+                <img class="field-carousel-slide" src="images/machinery-03.png" alt="Yellow drilling equipment" loading="lazy" decoding="async" draggable="false" />
+                <img class="field-carousel-slide" src="images/machinery-04.png" alt="Machinery being loaded onto trucks" loading="lazy" decoding="async" draggable="false" />
+                <img class="field-carousel-slide" src="images/machinery-05.png" alt="Large industrial machinery" loading="lazy" decoding="async" draggable="false" />
+                <img class="field-carousel-slide" src="images/machinery-06.png" alt="Industrial screening equipment" loading="lazy" decoding="async" draggable="false" />
+                <img class="field-carousel-slide" src="images/machinery-07.png" alt="Machinery inside a workshop" loading="lazy" decoding="async" draggable="false" />
+                <img class="field-carousel-slide" src="images/machinery-08.png" alt="Yellow drilling machine" loading="lazy" decoding="async" draggable="false" />
+                <img class="field-carousel-slide" src="images/machinery-09.png" alt="Industrial crushing machine" loading="lazy" decoding="async" draggable="false" />
+                <img class="field-carousel-slide" src="images/machinery-10.png" alt="Drilling rig outdoors" loading="lazy" decoding="async" draggable="false" />
+              </div>
+            </div>
+            <div class="field-carousel-status">
+              <span class="field-carousel-counter" aria-live="polite" aria-atomic="true">1 / 10</span>
+              <span class="field-carousel-hint">Swipe or drag to browse</span>
+              <button
+                class="field-carousel-autoplay-toggle"
+                type="button"
+                aria-label="Pause automatic slide changes"
+                hidden
+              >
+                Pause
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="focus-section" id="focus">
         <div class="section-wrap focus-inner">
           <div class="focus-heading">
